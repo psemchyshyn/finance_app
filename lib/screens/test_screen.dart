@@ -1,3 +1,6 @@
+import 'package:finance_app/utils/constants/app_strings.dart';
+import 'package:finance_app/widgets/payment_list/payment_list.dart';
+import 'package:finance_app/widgets/priority_payments/priority_payment_button.dart';
 import 'package:flutter/material.dart';
 
 class TestScreen extends StatelessWidget {
@@ -7,6 +10,17 @@ class TestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          PriorityPaymentButton(
+            onPressed: () {},
+            text: "TopUp",
+          ),
+        ],
+      )),
+    );
   }
 }

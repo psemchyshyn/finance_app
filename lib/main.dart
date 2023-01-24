@@ -1,3 +1,4 @@
+import 'package:finance_app/screens/contacts_screen.dart';
 import 'package:finance_app/screens/test_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -8,18 +9,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Concentration',
+      title: 'Finance app',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        //primarySwatch: Colors.blueGrey,
+        primaryColor: Colors.white,
       ),
-      initialRoute: TestScreen.routeName,
-      routes: {
-        TestScreen.routeName: (context) => TestScreen(),
-      },
+      home: ContactsScreen(),
     );
   }
 }

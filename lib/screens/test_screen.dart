@@ -16,53 +16,67 @@ class _PaymentScreenState extends State<PaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      centerTitle: true,
-        title: const Text('Send money'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          }
+      backgroundColor: Colors.white,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(100.0),
+        child: AppBar(
+          backgroundColor: Colors.deepPurpleAccent,
+          centerTitle: true,
+          title: const Text('Send Money'),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            }
+          ),
         ),
       ),
       body: Column(
         children: <Widget>[
-          ListTile(
-            leading: CircleAvatar(backgroundImage: AssetImage(widget.contact.image)),
-            title: Text(widget.contact.name),
-            subtitle: Text(widget.contact.card)
-          ),
-          // Container(
-          //   padding: EdgeInsets.all(16),
-          //   child: TextField(
-          //     decoration: InputDecoration(hintText: 'Enter Payment Amount'),
-          //     keyboardType: TextInputType.number,
-          //     onChanged: (value) {
-          //       setState(() {
-          //         _enteredNumber = value;
-          //       });
-          //     },
-          //   ),
-          // ),
           Expanded(
             child: Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  NumberKeyboard(),
                   SizedBox(
-                    width: 300,
+                    width: MediaQuery.of(context).size.width - 50,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                      child: ListTile(
+                        leading: CircleAvatar(backgroundImage: AssetImage(widget.contact.image)),
+                        title: Text(
+                          widget.contact.name, 
+                          style: const TextStyle(
+                            fontSize: 18.0,
+                          ),
+                        ),
+                        subtitle: Text(widget.contact.card)
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                  const SizedBox(height: 100),
+                  NumberKeyboard(),
+                  const SizedBox(height: 30),
+                  SizedBox(
+                    height: 50,
+                    width: MediaQuery.of(context).size.width - 50,
                     child: TextButton(
                       style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.purple)
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                        backgroundColor: MaterialStateProperty.all(Colors.deepPurpleAccent)
                         ),
                       onPressed: () {
                         // Handle button press
                       },
-                      child: Text('Continue', style: TextStyle(fontSize: 30)),
+                      child: const Text('Continue', style: TextStyle(fontSize: 20, color: Colors.white)),
                     ),
                   ),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),
@@ -87,12 +101,13 @@ class _NumberKeyboardState extends State<NumberKeyboard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[200],
+      height: 420,
+      color: Colors.white,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Text(_enteredNumber, style: TextStyle(fontSize: 24)),
-          SizedBox(height: 16),
+          Text(_enteredNumber, style: const TextStyle(fontSize: 40)),
+          const SizedBox(height: 50),
           Flexible(
             child: Row(
               children: <Widget>[
@@ -102,6 +117,7 @@ class _NumberKeyboardState extends State<NumberKeyboard> {
               ],
             ),
           ),
+          const SizedBox(height: 9),
           Flexible(
             child: Row(
               children: <Widget>[
@@ -111,6 +127,7 @@ class _NumberKeyboardState extends State<NumberKeyboard> {
               ],
             ),
           ),
+          const SizedBox(height: 9),
           Flexible(
             child: Row(
               children: <Widget>[
@@ -120,6 +137,7 @@ class _NumberKeyboardState extends State<NumberKeyboard> {
               ],
             ),
           ),
+          const SizedBox(height: 9),
           Flexible(
             child: Row(
               children: <Widget>[
@@ -141,8 +159,9 @@ class _NumberKeyboardState extends State<NumberKeyboard> {
         child: TextButton(
           child: Text(
             text, 
-            style: TextStyle(
-              fontSize: 30.0,
+            style: const TextStyle(
+              color: Colors.grey, 
+              fontSize: 39.0,
             ),
           ),
           onPressed: () {

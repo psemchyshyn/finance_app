@@ -1,5 +1,13 @@
 class AppStrings {
   static const String paymentList = "Payment List";
+  static const String availableMoney = "Available Balance";
+}
+
+class PpString {
+  static const String ppTopUp = "Top Up";
+  static const String ppSend = "Send";
+  static const String ppRequest = "Request";
+  static const String ppHistory = "History";
 }
 
 class PlbString {

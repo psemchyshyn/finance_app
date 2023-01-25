@@ -1,3 +1,4 @@
+import 'package:finance_app/screens/home_screen.dart';
 import 'package:finance_app/screens/test_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,9 +17,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      initialRoute: TestScreen.routeName,
+      initialRoute: HomeScreen.routeName,
       routes: {
         TestScreen.routeName: (context) => TestScreen(),
+        HomeScreen.routeName: (context) => HomeScreen(),
       },
     );
   }

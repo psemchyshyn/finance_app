@@ -19,7 +19,7 @@ class PaymentListButton extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               color: AppColors.appGray,
-              borderRadius: BorderRadius.circular(AppSizes.plbRadius)),
+              borderRadius: AppBorders.plbBorderRadius),
           height: AppSizes.plbSize,
           width: AppSizes.plbSize,
           child: MaterialButton(

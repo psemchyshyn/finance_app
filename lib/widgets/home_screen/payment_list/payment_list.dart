@@ -2,26 +2,24 @@ import 'package:finance_app/utils/constants/app_image_paths.dart';
 import 'package:finance_app/utils/constants/app_sizes.dart';
 import 'package:finance_app/utils/constants/app_strings.dart';
 import 'package:finance_app/utils/constants/app_text_styles.dart';
-import 'package:finance_app/widgets/payment_list/payment_list_button.dart';
+import 'package:finance_app/widgets/home_screen/payment_list/payment_list_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class PaymentList extends StatelessWidget {
-  final String text;
-
-  const PaymentList({super.key, required this.text});
+  const PaymentList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(AppSizes.plEdgeInsects),
       child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              text,
+              AppStrings.paymentList,
               style: AppTextStyles.plText,
             ),
             Row(

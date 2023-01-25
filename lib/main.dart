@@ -1,7 +1,7 @@
+import 'package:finance_app/business_logic/app_contract.dart';
 import 'package:finance_app/screens/statistics.dart';
 import 'package:finance_app/screens/statistics.dart';
 import 'package:finance_app/screens/contacts_screen.dart';
-import 'package:finance_app/screens/test_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => Statistics(),
         "/statistics": (context) => Statistics(),
-        "/contacts": (context) => Statistics()
+        "/contacts": (context) => ContactsScreen()
       },
     );
   }

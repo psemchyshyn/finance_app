@@ -15,7 +15,7 @@ class PriorityPaymentButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(children: [
-        IconButton(icon: Icon(Icons.) ,onPressed: onPressed),
+        IconButton(icon: Icon(Icons.home) ,onPressed: onPressed),
         Text(
           text,
           style: AppTextStyles.plbText,

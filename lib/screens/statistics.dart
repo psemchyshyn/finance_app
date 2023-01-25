@@ -18,8 +18,8 @@ class Statistics extends StatelessWidget {
       bottomNavigationBar: BottomNavBar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {}, 
-        backgroundColor: Colors.pink,
-        child: Icon(Icons.monetization_on, size: 32),
+        backgroundColor: Color(0xff6f12f6),
+        child: Icon(Icons.qr_code, size: 32),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Container(

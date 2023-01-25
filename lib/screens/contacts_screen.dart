@@ -1,6 +1,7 @@
 import 'package:finance_app/business_logic/app_contract.dart';
 import 'package:finance_app/screens/payment_screen.dart';
 import 'package:finance_app/utils/constants/app_colors.dart';
+import 'package:finance_app/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -55,6 +56,13 @@ class _ContactsScreenState extends State<ContactsScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+    bottomNavigationBar: BottomNavBar(),
+    floatingActionButton: FloatingActionButton(
+        onPressed: () {}, 
+        backgroundColor: Color(0xff6f12f6),
+        child: Icon(Icons.qr_code, size: 32),
+      ),
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     backgroundColor: Colors.white,
     appBar: AppBar(
       elevation: 0,

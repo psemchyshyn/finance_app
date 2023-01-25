@@ -2,11 +2,11 @@ import 'package:finance_app/utils/constants/app_colors.dart';
 import 'package:finance_app/utils/constants/app_image_paths.dart';
 import 'package:finance_app/utils/constants/app_sizes.dart';
 import 'package:finance_app/utils/constants/app_strings.dart';
+import 'package:finance_app/widgets/bottom_nav_bar.dart';
 import 'package:finance_app/widgets/home_screen/background_gradient.dart';
 import 'package:finance_app/widgets/home_screen/general_info/general_info.dart';
 import 'package:finance_app/widgets/home_screen/payment_list/payment_list.dart';
 import 'package:finance_app/widgets/home_screen/priority_payments/priority_payment.dart';
-import 'package:finance_app/widgets/home_screen/priority_payments/priority_payment_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,7 +16,15 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return Scaffold(
+      bottomNavigationBar: BottomNavBar(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {}, 
+        backgroundColor: const Color(0xff6f12f6),
+        child: const Icon(Icons.qr_code, size: 32),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      body: SafeArea(
       child: Stack(
         children: [
           const Positioned(
@@ -42,11 +50,12 @@ class HomeScreen extends StatelessWidget {
             right: GeneralInfoAlignment.plRight,
             bottom: GeneralInfoAlignment.plBottom,
             child: Container(
-                padding: EdgeInsets.only(top: AppSizes.ppPadding),
-                decoration: BoxDecoration(
-                    color: AppColors.primaryWhite,
-                    borderRadius: AppBorders.ppBorderRadiusPartial),
-                child: PaymentList()),
+              padding: const EdgeInsets.only(top: AppSizes.ppPadding),
+              decoration: BoxDecoration(
+                  color: AppColors.primaryWhite,
+                  borderRadius: AppBorders.ppBorderRadiusPartial),
+              child: const PaymentList()
+            ),
           ),
           const Positioned(
               top: GeneralInfoAlignment.ppTop,
@@ -56,6 +65,7 @@ class HomeScreen extends StatelessWidget {
               child: PriorityPayment()),
         ],
       ),
-    );
+    )
+  );
   }
 }

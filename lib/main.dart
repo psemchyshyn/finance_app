@@ -1,9 +1,7 @@
 import 'package:finance_app/screens/statistics.dart';
-import 'package:finance_app/screens/statistics.dart';
 import 'package:finance_app/screens/contacts_screen.dart';
 import 'package:finance_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
 
 
 void main() {
@@ -17,13 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Finance app wallet',
-      initialRoute: "/statistics",
+      initialRoute: "/",
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
       routes: {
-        "/": (context) => HomeScreen(),
-        "/statistics": (context) => Statistics(),
+        "/": (context) => const HomeScreen(),
+        "/statistics": (context) => const Statistics(),
         "/contacts": (context) => ContactsScreen()
       },
     );

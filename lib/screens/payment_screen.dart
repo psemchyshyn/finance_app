@@ -22,7 +22,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
         child: AppBar(
           backgroundColor: Colors.deepPurpleAccent,
           centerTitle: true,
-          title: const Text('Send Money'),
+          title: const Text('Send Money', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white, decoration: TextDecoration.none)),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
@@ -34,51 +34,49 @@ class _PaymentScreenState extends State<PaymentScreen> {
       body: Column(
         children: <Widget>[
           Expanded(
-            child: Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width - 50,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-                      child: ListTile(
-                        leading: CircleAvatar(backgroundImage: AssetImage(widget.contact.image)),
-                        title: Text(
-                          widget.contact.name, 
-                          style: const TextStyle(
-                            fontSize: 18.0,
-                          ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                SizedBox(
+                  width: MediaQuery.of(context).size.width - 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                    child: ListTile(
+                      leading: CircleAvatar(backgroundImage: AssetImage(widget.contact.image)),
+                      title: Text(
+                        widget.contact.name, 
+                        style: const TextStyle(
+                          fontSize: 18.0,
                         ),
-                        subtitle: Text(widget.contact.card)
                       ),
-                      onPressed: () {},
+                      subtitle: Text(widget.contact.card)
                     ),
+                    onPressed: () {},
                   ),
-                  const SizedBox(height: 100),
-                  NumberKeyboard(),
-                  const SizedBox(height: 30),
-                  SizedBox(
-                    height: 50,
-                    width: MediaQuery.of(context).size.width - 50,
-                    child: TextButton(
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
+                ),
+                const SizedBox(height: 100),
+                NumberKeyboard(),
+                const SizedBox(height: 30),
+                SizedBox(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width - 50,
+                  child: TextButton(
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
-                        backgroundColor: MaterialStateProperty.all(Colors.deepPurpleAccent)
-                        ),
-                      onPressed: () {
-                        // Handle button press
-                      },
-                      child: const Text('Continue', style: TextStyle(fontSize: 20, color: Colors.white)),
-                    ),
+                      ),
+                      backgroundColor: MaterialStateProperty.all(Colors.deepPurpleAccent)
+                      ),
+                    onPressed: () {
+                      // Handle button press
+                    },
+                    child: const Text('Continue', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white, decoration: TextDecoration.none)),
                   ),
-                  const SizedBox(height: 30),
-                ],
-              ),
+                ),
+                const SizedBox(height: 30),
+              ],
             ),
           ),
         ],

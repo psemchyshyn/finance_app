@@ -1,5 +1,11 @@
+import 'package:finance_app/screens/statistics.dart';
+import 'package:finance_app/screens/statistics.dart';
+import 'package:finance_app/screens/contacts_screen.dart';
 import 'package:finance_app/screens/test_screen.dart';
+
 import 'package:flutter/material.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
+
 
 void main() {
   runApp(const MyApp());
@@ -8,17 +14,19 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Concentration',
+      title: 'Flutter Demo',
+      initialRoute: "/statistics",
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        //primarySwatch: Colors.blueGrey,
+        primaryColor: Colors.white,
       ),
-      initialRoute: TestScreen.routeName,
       routes: {
-        TestScreen.routeName: (context) => TestScreen(),
+        "/": (context) => Statistics(),
+        "/statistics": (context) => Statistics(),
+        "/contacts": (context) => Statistics()
       },
     );
   }

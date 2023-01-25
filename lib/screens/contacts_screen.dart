@@ -86,29 +86,32 @@ class _ContactsScreenState extends State<ContactsScreen> {
                 shrinkWrap: true,
                 itemCount: contactList.length,
                 itemBuilder: (context, index) {
-                  // return ListTile(
-                  //   leading: CircleAvatar(backgroundImage: AssetImage(contactList[index].image)),
-                  //   title: Text(contactList[index].name),
-                  //   subtitle: Text(contactList[index].card)
-                  // );
                   return Container(
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-                      child: ListTile(
-                          leading: CircleAvatar(backgroundImage: AssetImage(contactList[index].image)),
-                          title: Text(contactList[index].name),
-                          subtitle: Text(contactList[index].card)
+                    //padding: const EdgeInsets.only(left: 16, right: 16),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                        child: ListTile(
+                            leading: CircleAvatar(backgroundImage: AssetImage(contactList[index].image)),
+                            title: Text(
+                              contactList[index].name,
+                              style: const TextStyle(
+                                fontSize: 18.0,
+                              ),
+                            ),
+                            subtitle: Text(contactList[index].card)
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PaymentScreen(contact: contactList[index]),
+                            ),
+                          );
+                        },
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PaymentScreen(contact: contactList[index]),
-                          ),
-                        );
-                          },
-                    )
+                    ),
                   );
                 },
               ),
